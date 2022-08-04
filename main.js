@@ -1,4 +1,5 @@
-const url = 'https://api.openweathermap.org/data/2.5/weather?id=2147714&appid=57cf175195b87607629b8c5707f4e1ec';
+const API_KEY = config.apikey;
+const url = `https://api.openweathermap.org/data/2.5/weather?id=2147714&appid=${config.apikey}`;
 //로딩 이미지 표시
 $('#weather_info .load_img').show();
 $.getJSON(url, function(data) {
@@ -38,7 +39,7 @@ $.getJSON(url, function(data) {
   //데이타 로딩 후 로딩 미이지 제거
   $('#weather_info .load_img').hide();
 });
-  $.fail(function() {
-    //오류 메세지 표시
-    alert("loading error");
-  });
+  // .fail(function() {
+  //   //오류 메세지 표시
+  //   alert("loading error");
+  // });
